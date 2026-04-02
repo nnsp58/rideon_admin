@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep:*)",
+      "Bash(flutter:*)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :8080)",
+      "Bash(tee flutter_output.log)",
+      "Bash(ls:*)",
+      "Bash(findstr \"LISTENING\")",
+      "Bash(findstr :5)",
+      "Bash(tasklist)",
+      "Bash(findstr -i \"dart\\\\|flutter\")",
+      "Bash(findstr -i chrome)"
+    ]
+  }
+}

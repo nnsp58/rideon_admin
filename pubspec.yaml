@@ -1,0 +1,48 @@
+name: rideon_admin
+description: "RideOn Admin Panel — Flutter Web"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Backend
+  supabase_flutter: ^2.5.0
+
+  # Navigation
+  go_router: ^13.2.0
+
+  # Maps
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  geolocator: ^13.0.2
+
+  # State
+  flutter_riverpod: ^2.5.1
+
+  # UI
+  cached_network_image: ^3.4.1
+  timeago: ^3.7.0
+  intl: ^0.19.0
+  data_table_2: ^2.5.12       # Better DataTable for web
+  fl_chart: ^0.68.0           # Dashboard charts
+
+  # Utils
+  url_launcher: ^6.3.2        # Google Maps links ke liye
+  flutter_map_cancellable_tile_provider: ^3.0.2
+  flutter_dotenv: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env

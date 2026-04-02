@@ -1,0 +1,73 @@
+version: "2"
+type: frontend
+tech_stack:
+  - dart
+  - flutter
+  - supabase
+  - go_router
+routes:
+  - path: /login
+    file: lib/screens/login/login_screen.dart
+    auth_required: false
+    description: Admin login page
+  - path: /dashboard
+    file: lib/screens/dashboard/dashboard_screen.dart
+    auth_required: true
+    description: Admin dashboard with overall stats
+  - path: /users
+    file: lib/screens/users/users_screen.dart
+    auth_required: true
+    description: User management table with ban/unban and admin toggle
+  - path: /documents
+    file: lib/screens/documents/documents_screen.dart
+    auth_required: true
+    description: Driver document verification interface
+  - path: /sos
+    file: lib/screens/sos/sos_screen.dart
+    auth_required: true
+    description: SOS alerts monitoring and resolution
+  - path: /rides
+    file: lib/screens/rides/rides_screen.dart
+    auth_required: true
+    description: List of rides with details and map view
+  - path: /bookings
+    file: lib/screens/bookings/bookings_screen.dart
+    auth_required: true
+    description: Bookings management linked to passengers and rides
+features:
+  - name: Global Sidebar Navigation
+    description: Responsive sidebar with drawer for mobile devices
+    files:
+      - lib/screens/shell/admin_shell.dart
+    entry_route: /dashboard
+    user_interactions:
+      - Click hamburger menu on mobile to open drawer
+      - Click navigation items to switch pages
+      - Verify sidebar collapses on desktop
+    auth_required: true
+  - name: User Management
+    description: Manage user roles and status
+    files:
+      - lib/screens/users/users_screen.dart
+    entry_route: /users
+    user_interactions:
+      - Search for users by name/phone
+      - Click toggle admin button
+      - Click ban/unban button
+    api_calls:
+      - method: UPDATE
+        endpoint: /rest/v1/users
+    auth_required: true
+  - name: SOS Monitoring
+    description: Monitor and resolve active SOS alerts
+    files:
+      - lib/screens/sos/sos_screen.dart
+    entry_route: /sos
+    user_interactions:
+      - View list of SOS alerts
+      - Click resolve button
+    api_calls:
+      - method: UPDATE
+        endpoint: /rest/v1/sos_alerts
+    auth_required: true
+known_limitations: []
